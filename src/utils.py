@@ -12,3 +12,10 @@ def saveobject(file_path,obj):
     except Exception as e:
         raise CustomException(e,sys)
 
+def loadobject(file_path):
+    try:
+        with open(file_path,'rb') as f:
+            pickle.load(f)
+
+    except Exception as e:
+        raise CustomException(e,sys)

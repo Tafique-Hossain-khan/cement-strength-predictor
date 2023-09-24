@@ -13,9 +13,9 @@ from src.components.data_injection import DataInjection
 
 @dataclass
 class ModelTranerConfig:
-    trained_model_file_path:str = os.path.join('aritfacts','model.pkl')
+    trained_model_file_path:str = os.path.join('artifacts','model.pkl')
 
-class ModelTrander:
+class ModelTraner:
     def __init__(self) -> None:
         self.model_traned_config = ModelTranerConfig()
 
@@ -24,7 +24,7 @@ class ModelTrander:
             #train test split
             logging.info('Train Test split for model traning')
             X = train_arr[:,:-1]
-            y = train_arr[:-1]
+            y = train_arr[:,-1]
 
             X_train,X_test,y_train,y_test = train_test_split(X,y,test_size=0.2,random_state=42)
             logging.info('Initilizing and tuning the model')
