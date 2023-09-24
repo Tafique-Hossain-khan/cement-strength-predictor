@@ -13,7 +13,7 @@ def get_packages(file_path:str)->List[str]:
     return requirnments
 
 setup(
-    name="ML Project",
+    name="Cement strength predictor",
     version='0.0.1',
     author='Tafique',
     author_email='tafiquehossain2003@gmail.com',
