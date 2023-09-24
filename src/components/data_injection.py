@@ -32,10 +32,13 @@ class DataInjection:
             train_data.to_csv(self.data_path.train_data_path,index=False,header=True)
             test_data.to_csv(self.data_path.test_data_path,index=False,header=True)
             logging.info('Data Injection Complited')
+
+            return(
+                self.data_path.train_data_path,
+                self.data_path.test_data_path
+            )
         except Exception as e:
             raise CustomException(e,sys)
 
-if __name__ == "__main__":
-    obj = DataInjection()
-    obj.initiate_data_injection()
+
 
